@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "9bbbc818-8ebe-46fc-b015-8f8ac4213b2c",
+		"name": "M14-SpringREST-API-ERRORS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/api/tiendas/greet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"greet"
+					]
+				},
+				"description": "Simple test hello request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/pop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/pop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"pop"
+					]
+				},
+				"description": "Type mismatch exception"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/100",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"100"
+					]
+				},
+				"description": "Probando TiendaNotFoundException"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/search/nnfidonfiosda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/search/nnfidonfiosda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"search",
+						"nnfidonfiosda"
+					]
+				},
+				"description": "Probando error en busqueda de tiendas por nombre"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						""
+					]
+				},
+				"description": "Probando error de empty-body "
+			},
+			"response": []
+		}
+	]
+}

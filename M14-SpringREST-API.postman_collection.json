@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "aaca40ea-3430-4857-aa72-5bee3a1951bb",
+		"name": "M14-SpringREST-API",
+		"description": "Postman collection for API REST Modulo 14. Contains:\n-CRUD for shops\n-CRUD for pictures\n-Filtering queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/api/tiendas/greet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"greet"
+					]
+				},
+				"description": "Simple test hello request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						""
+					]
+				},
+				"description": "List all shops"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "shop ID"
+						}
+					]
+				},
+				"description": "Find by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"nombreTienda\":\"Aqui no hay cuadros\",\r\n    \"maxCuadros\":250\r\n    },\r\n    {\r\n    \"nombreTienda\":\"Solo collares S.L\",\r\n    \"maxCuadros\":220\r\n    },\r\n    {\r\n    \"nombreTienda\":\"WhiteTapadera\",\r\n    \"maxCuadros\":100\r\n    },\r\n    {\r\n    \"nombreTienda\":\"Necktures\",\r\n    \"maxCuadros\":50\r\n    },\r\n    {\r\n        \"nombreTienda\": \"Necklaces&Art\",\r\n        \"maxCuadros\": 50,\r\n        \"cuadros\": null\r\n    },\r\n     {\r\n        \"nombreTienda\": \"Safeplace S.A\",\r\n        \"maxCuadros\": 300,\r\n        \"cuadros\": null\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"data"
+					]
+				},
+				"description": "Initial data for the api"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreTienda\": \"Shop name\",\r\n    \"maxCuadros\": 120,\r\n    \"cuadros\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						""
+					]
+				},
+				"description": "Create a shop"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {       \r\n    \"nombreTienda\": \"Prueba2Modificada\",\r\n    \"maxCuadros\": 300,\r\n    \"cuadros\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "shop ID"
+						}
+					]
+				},
+				"description": "Update a shop by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/fire/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/fire/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"fire",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "shop id"
+						}
+					]
+				},
+				"description": "delete shop by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"delete"
+					]
+				},
+				"description": "Delete all shops"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/search/capacity/100",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/search/capacity/:maxCuadros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"search",
+						"capacity",
+						":maxCuadros"
+					],
+					"variable": [
+						{
+							"key": "maxCuadros",
+							"value": "",
+							"description": "shop picture capacity"
+						}
+					]
+				},
+				"description": "Filter shops by picture capacity"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/search/prueb",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/search/:nombreTienda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"search",
+						":nombreTienda"
+					],
+					"variable": [
+						{
+							"key": "nombreTienda",
+							"value": "",
+							"description": "filter by :nombreTienda"
+						}
+					]
+				},
+				"description": "Filter shops by name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						""
+					]
+				},
+				"description": "List all pictures"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"nombreCuadro\":\"El beso\",\r\n    \"autor\":\"Gustavo Klimt\",\r\n    \"precio\":43.6,\r\n    \"tienda\":{\r\n        \"idTienda\":3\r\n        }\r\n    },\r\n    {\r\n    \"nombreCuadro\":\"Guernica\",\r\n    \"autor\":\"Pablo Picaso\",\r\n    \"precio\":220.5,\r\n    \"fechaCreacion\": \"2021-11-01T09:45:00.000+02:00\",\r\n    \"tienda\":{\r\n        \"idTienda\":4\r\n        }\r\n    },\r\n    {\r\n    \"nombreCuadro\":\"Las Meninas\",\r\n    \"autor\":\"Gustavo Velazquez\",\r\n    \"precio\":1800,\r\n    \"fechaCreacion\": \"2021-11-01T09:45:00.000+02:00\",\r\n    \"tienda\":{\r\n        \"idTienda\":1\r\n        }\r\n    }   \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"data"
+					]
+				},
+				"description": "Bundle of data for inicialize pictures"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/2/cuadros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCuadro\":\"El jardín de las delicias\",\r\n    \"autor\":\"El bosco\",\r\n    \"precio\":175.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/:id/cuadros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						":id",
+						"cuadros"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Post/insert a picture on a shop by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCuadro\":\"La noche estrellada\",\r\n    \"autor\":\"Vincent van Gogh\",\r\n    \"precio\":120,\r\n    \"tienda\":{\r\n        \"idTienda\":2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						""
+					]
+				},
+				"description": "Post/insert a picture"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/tiendas/cuadros/5",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCuadro\":\"La gran ola de Kanagawa\",\r\n    \"autor\":\" Katsushika Hokusai\",\r\n    \"precio\":222.5,\r\n    \"tienda\":{\r\n        \"idTienda\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tiendas/cuadros/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "picture id"
+						}
+					]
+				},
+				"description": "Update a picture by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "picture id"
+						}
+					]
+				},
+				"description": "Find picture by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/fire/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/fire/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"fire",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "picture id"
+						}
+					]
+				},
+				"description": "Delete picture by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/fire",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/fire",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"fire"
+					]
+				},
+				"description": "delete all pictures"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/search/nombre/:nombreCuadro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/search/nombre/:nombreCuadro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"search",
+						"nombre",
+						":nombreCuadro"
+					],
+					"variable": [
+						{
+							"key": "nombreCuadro",
+							"value": "",
+							"description": "filter by :nombreCuadro"
+						}
+					]
+				},
+				"description": "Filter picture by name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/search/autor/:autor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/search/autor/:autor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"search",
+						"autor",
+						":autor"
+					],
+					"variable": [
+						{
+							"key": "autor",
+							"value": "",
+							"description": "filter by :autor"
+						}
+					]
+				},
+				"description": "Filter pictures by author"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/tiendas/cuadros/search/precio/:precio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/tiendas/cuadros/search/precio/:precio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tiendas",
+						"cuadros",
+						"search",
+						"precio",
+						":precio"
+					],
+					"variable": [
+						{
+							"key": "precio",
+							"value": "",
+							"description": "picture price"
+						}
+					]
+				},
+				"description": "Filter pictures by price"
+			},
+			"response": []
+		}
+	]
+}
